@@ -1,10 +1,14 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import { UserInput } from './components/UserInput';
+import { Interaction } from './features/Interaction';
 
 function App() {
+  const [userMsg, setUserMsg] = useState("")
   return (
     <div className="App">
-      yo
+      <UserInput /> 
+      <Interaction /> 
     </div>
   );
 }
