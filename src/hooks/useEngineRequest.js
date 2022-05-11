@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import { Configuration, OpenAIApi } from "openai";
 
-export default function useEngineRequest(data, url) {
+export default function useEngineRequest(data, url, dependency) {
   const [response, setResponse] = useState([]);
   useEffect(() => {
     
@@ -31,6 +31,6 @@ export default function useEngineRequest(data, url) {
         .then((data) => setResponse(data.data.choices));
     };
     sendAxReq(data);
-  }, []);
+  }, [dependency]);
   return response;
 }

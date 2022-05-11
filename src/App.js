@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
-import { UserInput } from './components/UserInput';
+import { UserForm } from './features/UserForm';
 import { Interaction } from './features/Interaction';
 
 function App() {
@@ -8,9 +8,10 @@ function App() {
   const submitUserMsg = (msg) => {
     setUserMsg(msg)
   }
+  
   return (
     <div className="App">
-      <UserInput onSubmit={submitUserMsg} userMsg={userMsg} /> 
+      <UserForm submitUserMsg={submitUserMsg}/>
       <Interaction userMsg={userMsg}/> 
     </div>
   );
