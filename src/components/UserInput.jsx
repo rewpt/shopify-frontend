@@ -8,6 +8,8 @@ export const UserInput = styled.input`
   font-size: 1em;
   margin-bottom: 8px;
   width: 100%;
+  height: 100%;
   box-sizing: border-box;
   height: 40px;
+  z-index: 1;
 `;

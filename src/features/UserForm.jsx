@@ -6,6 +6,7 @@ import { Button } from "../components/Button";
 const Form = styled.form`
   width: 100%;
   max-width: 400px;
+  display: flex;
 `;
 
 export const UserForm = (props) => {
