@@ -1,5 +1,6 @@
 import React from "react";
 import useEngineRequest from "../hooks/useEngineRequest";
+import { useSelector } from "react-redux";
 
 export const Interaction = (props) => {
   const { userMsg } = props;
@@ -14,8 +15,15 @@ export const Interaction = (props) => {
   };
   const response = useEngineRequest(data, url, userMsg);
 
+  const interactions = useSelector((state) => {
+    return state.interactions;
+  });
+
   return (
     <div>
+      {interactions.map((i, index) => {
+        return <p key={index}>{i.id}</p>;
+      })}
       {response.map((i, index) => {
         return <p key={index}>{i.text}</p>;
       })}
