@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { UserInput } from "../components/UserInput";
+import { UserInput } from "../components/Main/UserInput";
 import styled from "styled-components";
-import { Button } from "../components/Button";
+import { Button } from "../components/Main/Button";
 
 const Form = styled.form`
   width: 100%;
@@ -18,6 +18,7 @@ export const UserForm = (props) => {
         onSubmit={(e) => {
           e.preventDefault();
           submitUserMsg(userInput);
+          setUserInput("");
         }}
       >
         <UserInput
