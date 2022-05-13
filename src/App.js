@@ -4,7 +4,7 @@ import { UserForm } from './features/UserForm';
 import { Interaction } from './features/Interaction';
 import {createGlobalStyle} from 'styled-components';
 import styled from "styled-components";
-import { MainTitle } from './components/MainTitle';
+import { MainTitle } from './components/Main/MainTitle';
 
 const AppContainer = styled.div`
 display: flex;
