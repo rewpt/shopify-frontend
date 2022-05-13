@@ -2,16 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const interactionsSlice = createSlice({
   name: "interactions",
-  initialState: [{id: 33, prompt: "waddup", response: "nothing"}],
+  initialState: [],
   reducers: {
-    addInteraction: (state, id, prompt, response) => {
-      state = [...state, 
-        {
-          id,
-          prompt,
-          response
-        }
-      ];
+    addInteraction: (state, action) => {
+      console.log(state)
+      state.push(action.payload);
     },
   }
 });
