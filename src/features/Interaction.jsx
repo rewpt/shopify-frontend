@@ -1,6 +1,8 @@
 import React from "react";
 import useEngineRequest from "../hooks/useEngineRequest";
 import { useSelector } from "react-redux";
+import { CardsContainer } from "../components/Card/CardsContainer";
+import { Card } from "../components/Card/Card";
 
 export const Interaction = (props) => {
   const { userMsg } = props;
@@ -20,13 +22,15 @@ export const Interaction = (props) => {
   });
 
   return (
-    <div>
+    <CardsContainer>
       {interactions.map((i, index) => {
-        return <p key={index}>{i.id}</p>;
+        return (
+          <Card key={index}>
+            <p>{i.prompt}</p>
+            <p>{i.response}</p>
+          </Card>
+        );
       })}
-      {response.map((i, index) => {
-        return <p key={index}>{i.text}</p>;
-      })}
-    </div>
+    </CardsContainer>
   );
 };
