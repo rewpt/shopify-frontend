@@ -9,20 +9,25 @@ import { MainTitle, SecondaryTitle } from './components/Main/Titles';
 const AppContainer = styled.div`
 display: grid;
 grid-template-columns: repeat(12, 1fr);
+margin: 100px 100px 0 100px;
+padding: 0 50px 0 50px;
+border-radius: 20px;
+height: 90vh;
+background: rgb(255,255,255);
+background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(244,244,244,1) 100%);
 `
 
 const GlobalStyle = createGlobalStyle`
 html{
-  background: rgb(229,229,229) ;
+  background: rgb(151,133,247);
+  background: linear-gradient(90deg, rgba(151,133,247,1) 0%, rgba(115,92,242,1) 38%);
   min-height: 100vh;
-  margin: 100px 140px 0 140px;
 }
 `
 
 const LeftContainer = styled.div`
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
   grid-column: 1 / 5;
 `
 const RightContainer = styled.div`
