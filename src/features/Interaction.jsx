@@ -2,7 +2,7 @@ import React from "react";
 import useEngineRequest from "../hooks/useEngineRequest";
 import { useSelector } from "react-redux";
 import { CardsContainer } from "../components/Card/CardsContainer";
-import { Card } from "../components/Card/Card";
+import { Card, CardBrowser } from "../components/Card/Card";
 
 export const Interaction = (props) => {
   const { userMsg } = props;
@@ -22,12 +22,14 @@ export const Interaction = (props) => {
   });
 
   return (
-    <CardsContainer>
+    <CardsContainer className="cards-container">
       {interactions.map((i, index) => {
         return (
-          <Card key={index}>
-            <p>{i.prompt}</p>
-            <p>{i.response}</p>
+          <Card key={index} className="card">
+            <CardBrowser>
+              <p>{i.prompt}</p>
+              <p>{i.response}</p>
+            </CardBrowser>
           </Card>
         );
       })}

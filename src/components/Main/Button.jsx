@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Button = styled.button`
-  height: 25%;
-  background-color: black;
+  background-color: #735cf2;
   color: white;
 `;
