@@ -7,6 +7,7 @@ const Form = styled.form`
   width: 100%;
   max-width: 400px;
   display: flex;
+  flex-direction: column;
 `;
 
 export const UserForm = (props) => {
@@ -23,6 +24,8 @@ export const UserForm = (props) => {
       >
         <UserInput
           type="text"
+          className="userInput"
+          placeholder="Ex. How far away is Jupiter from Pluto?"
           onChange={(e) => {
             setUserInput(e.target.value);
           }}

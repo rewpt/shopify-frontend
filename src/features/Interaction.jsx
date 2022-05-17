@@ -3,6 +3,7 @@ import useEngineRequest from "../hooks/useEngineRequest";
 import { useSelector } from "react-redux";
 import { CardsContainer } from "../components/Card/CardsContainer";
 import { Card, CardBrowser } from "../components/Card/Card";
+import { Prompt, Response } from "../components/Card/Text";
 
 export const Interaction = (props) => {
   const { userMsg } = props;
@@ -27,8 +28,8 @@ export const Interaction = (props) => {
         return (
           <Card key={index} className="card">
             <CardBrowser>
-              <p>{i.prompt}</p>
-              <p>{i.response}</p>
+              <Prompt>{i.prompt}</Prompt>
+              <Response>{i.response}</Response>
             </CardBrowser>
           </Card>
         );
