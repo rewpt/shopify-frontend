@@ -7,6 +7,13 @@ export const interactionsSlice = createSlice({
     addInteraction: (state, action) => {
       state.push(action.payload);
     },
+    removeInteraction: (state, action) => {
+      state.filter((card, index) => {
+        if(index !== action.payload ) {
+          return card;
+        }
+      })
+    }
   }
 });
 

@@ -4,7 +4,7 @@ import { UserForm } from './features/UserForm';
 import { Interaction } from './features/Interaction';
 import {createGlobalStyle} from 'styled-components';
 import styled from "styled-components";
-import leaves from "./images/leaves.jpeg"
+import leaves from "./images/leavesCut.png"
 import { MainTitle, SecondaryTitle } from './components/Main/Titles';
 
 const AppContainer = styled.div`
@@ -15,7 +15,7 @@ border-radius: 15px;
 overflow: hidden;
 width: 80vw;
 height: 90vh;
-background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(244,244,244,1) 100%);
+background: white;
 `
 
 const GlobalStyle = createGlobalStyle`
@@ -42,12 +42,10 @@ const LeftContainer = styled.div`
 `
 const RightContainer = styled.div`
   display: flex;
-  background-color: white;
   background-image: url(${leaves});
   z-index: 5;
   width: 100%;
   height: 100%;
-  background-size: contain; 
   background-repeat: no-repeat;
   background-position: right bottom;
   flex-direction: column;

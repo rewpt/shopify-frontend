@@ -4,6 +4,8 @@ import { useSelector } from "react-redux";
 import { CardsContainer } from "../components/Card/CardsContainer";
 import { Card, CardBrowser } from "../components/Card/Card";
 import { Prompt, Response } from "../components/Card/Text";
+import xImg from "../images/X.png";
+import { XIcon } from "../components/Card/XIcon";
 
 export const Interaction = (props) => {
   const { userMsg } = props;
@@ -27,6 +29,7 @@ export const Interaction = (props) => {
       {interactions.map((i, index) => {
         return (
           <Card key={index} className="card">
+            <XIcon src={xImg}></XIcon>
             <CardBrowser>
               <Prompt>{i.prompt}</Prompt>
               <Response>{i.response}</Response>

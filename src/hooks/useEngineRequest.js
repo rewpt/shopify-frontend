@@ -24,7 +24,6 @@ export default function useEngineRequest(data, url, dependency) {
         });
         
     };
-    console.log(data.prompt)
     if(data.prompt.length > 1) {
       sendAxReq(data);
     }
