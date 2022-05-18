@@ -8,7 +8,6 @@ export const Card = styled.div`
   font-family: "Lato", sans-serif;
   font-size: 1.5rem;
   margin-right: 10px;
-  filter: drop-shadow(5px 5px 4px #e4e4e5);
 `;
 
 export const CardBrowser = styled.div``;

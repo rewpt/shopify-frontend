@@ -13,16 +13,25 @@ const Form = styled.form`
 export const UserForm = (props) => {
   const { submitUserMsg } = props;
   const [userInput, setUserInput] = useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    submitUserMsg(userInput);
+    setUserInput("");
+  };
+
+  const handleUserKeyPress = (e) => {
+    console.log("is this even firing");
+    if (e.keyCode == 13 && e.shiftKey == false) {
+      e.preventDefault();
+      submitUserMsg(userInput);
+      setUserInput("");
+    }
+  };
   return (
     <>
-      <Form
-        onSubmit={(e) => {
-          e.preventDefault();
-          submitUserMsg(userInput);
-          setUserInput("");
-        }}
-      >
+      <Form onSubmit={handleSubmit}>
         <UserInput
+          autoFocus
           type="text"
           className="userInput"
           placeholder="Ex. How far away is Jupiter from Pluto?"
@@ -30,6 +39,7 @@ export const UserForm = (props) => {
             setUserInput(e.target.value);
           }}
           value={userInput}
+          onKeyDown={handleUserKeyPress}
         />
         <Button type="submit">Answer me Robot! </Button>
       </Form>

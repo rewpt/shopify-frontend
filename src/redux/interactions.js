@@ -5,7 +5,6 @@ export const interactionsSlice = createSlice({
   initialState: [],
   reducers: {
     addInteraction: (state, action) => {
-      console.log(state)
       state.push(action.payload);
     },
   }

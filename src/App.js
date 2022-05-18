@@ -15,7 +15,6 @@ border-radius: 15px;
 overflow: hidden;
 width: 80vw;
 height: 90vh;
-background: rgb(255,255,255);
 background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(244,244,244,1) 100%);
 `
 
@@ -26,7 +25,6 @@ html{
 `
 
 const AppBg = styled.div`
-  background: rgb(151,133,247);
   background: linear-gradient(90deg, rgba(151,133,247,1) 0%, rgba(115,92,242,1) 38%);
   min-height: 100vh;
   width: 100%;
