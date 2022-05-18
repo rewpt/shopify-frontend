@@ -4,13 +4,15 @@ import { UserForm } from './features/UserForm';
 import { Interaction } from './features/Interaction';
 import {createGlobalStyle} from 'styled-components';
 import styled from "styled-components";
+import leaves from "./images/leaves.jpeg"
 import { MainTitle, SecondaryTitle } from './components/Main/Titles';
 
 const AppContainer = styled.div`
 display: grid;
 grid-template-columns: repeat(12, 1fr);
-padding: 0 50px 0 50px;
-border-radius: 20px;
+padding: 0 0 0 50px;
+border-radius: 15px;
+overflow: hidden;
 width: 80vw;
 height: 90vh;
 background: rgb(255,255,255);
@@ -19,7 +21,7 @@ background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(244,244,244,1) 1
 
 const GlobalStyle = createGlobalStyle`
 html{
-
+  font-family: "Lato", sans-serif;
 }
 `
 
@@ -38,9 +40,18 @@ const LeftContainer = styled.div`
   display: flex;
   flex-direction: column;
   grid-column: 1 / 5;
+  justify-self: center;
 `
 const RightContainer = styled.div`
   display: flex;
+  background-color: white;
+  background-image: url(${leaves});
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  background-size: contain; 
+  background-repeat: no-repeat;
+  background-position: right bottom;
   flex-direction: column;
   grid-column: 6 / span 7;
   overflow-y: scroll;
@@ -64,7 +75,7 @@ function App() {
       <AppContainer className="app-container">
         <LeftContainer className="left-container">
           <MainTitle className="main-title"> Hi, I'm Bicentennial Bot </MainTitle>
-          <SecondaryTitle className="secondary-title">Talk to me</SecondaryTitle>
+          <SecondaryTitle className="secondary-title">How can I help you?</SecondaryTitle>
           <UserForm className="form" submitUserMsg={submitUserMsg}/>
         </LeftContainer>
         <RightContainer className="right-container">

@@ -8,20 +8,6 @@ export default function useEngineRequest(data, url, dependency) {
   const [response, setResponse] = useState([]);
   const dispatch = useDispatch();
   useEffect(() => {
-    
-    // const getData = async () => {
-    //   const configuration = new Configuration({
-    //     organization: "org-ycu24WCpMDdQWjw2z21rpxVt",
-    //     apiKey: `${process.env.REACT_APP_OPENAI_API_KEY}`,
-    //   });
-    //   const openai = new OpenAIApi(configuration);
-    //   try {
-    //     const res = await openai.listEngines();
-    //     setResponse(res.data.data);
-    //   } catch {
-    //     console.log("err");
-    //   }
-    // };
 
     const sendAxReq = (data) => {
       axios
