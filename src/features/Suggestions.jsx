@@ -6,15 +6,17 @@ const SuggestionContainer = styled.div``;
 export const Suggestions = (props) => {
   const { submitUserMsg } = props;
   const suggestionList = [
-    "Why is Shopify so good?",
+    "How is Shopify so good?",
     "How do I say Hello in Spanish?",
+    "Where is the best place to get pizza in Toronto?",
   ];
   return (
     <SuggestionContainer>
       <Title>Quick Queries</Title>
-      {suggestionList.map((suggestion) => {
+      {suggestionList.map((suggestion, index) => {
         return (
           <Button
+            key={index}
             onClick={() => {
               submitUserMsg(suggestion);
             }}

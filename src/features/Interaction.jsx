@@ -10,8 +10,8 @@ import { useDispatch } from "react-redux";
 import { removeInteraction } from "../redux/interactions";
 
 export const Interaction = (props) => {
-  const { userMsg } = props;
-  const url = "https://api.openai.com/v1/engines/text-curie-001/completions";
+  const { userMsg, bot } = props;
+  const url = `https://api.openai.com/v1/engines/${bot.code}/completions`;
   const data = {
     prompt: `${userMsg}`,
     temperature: 0.5,
@@ -20,7 +20,7 @@ export const Interaction = (props) => {
     frequency_penalty: 0.0,
     presence_penalty: 0.0,
   };
-  const response = useEngineRequest(data, url, userMsg);
+  const response = useEngineRequest(data, url, userMsg, bot);
   const dispatch = useDispatch();
 
   const interactions = useSelector((state) => {
@@ -39,6 +39,7 @@ export const Interaction = (props) => {
               src={xImg}
             ></XIcon>
             <CardBrowser>
+              {i.bot}
               <Prompt>{i.prompt}</Prompt>
               <Response>{i.response}</Response>
             </CardBrowser>

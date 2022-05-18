@@ -4,7 +4,7 @@ import {useDispatch} from "react-redux";
 import { addInteraction } from '../redux/interactions';
 // import { Configuration, OpenAIApi } from "openai";
 
-export default function useEngineRequest(data, url, dependency) {
+export default function useEngineRequest(data, url, dependency, bot) {
   const [response, setResponse] = useState([]);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -20,7 +20,7 @@ export default function useEngineRequest(data, url, dependency) {
         .then((res) => { 
           const responseStr = res.data.choices
           setResponse(responseStr);
-          dispatch(addInteraction({prompt: data.prompt, response: responseStr[0].text }))
+          dispatch(addInteraction({prompt: data.prompt, response: responseStr[0].text, bot: bot.name}))
         });
         
     };

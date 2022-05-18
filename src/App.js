@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import { UserForm } from './features/UserForm';
 import { Interaction } from './features/Interaction';
+import { ChangeBot } from './features/ChangeBot';
+
 import {createGlobalStyle} from 'styled-components';
 import styled from "styled-components";
 import leaves from "./images/leavesCut.png"
@@ -43,6 +45,7 @@ const LeftContainer = styled.div`
 `
 const RightContainer = styled.div`
   display: flex;
+  align-items: center;
   background-image: url(${leaves});
   z-index: 5;
   width: 100%;
@@ -60,9 +63,13 @@ const RightContainer = styled.div`
 
 function App() {
   const [userMsg, setUserMsg] = useState("")
+  const [bot, setBot] = useState({name: "Curie", code: "text-curie-001" });
   const [interactions, setInteractions] = useState([])
   const submitUserMsg = (msg) => {
     setUserMsg(msg)
+  }
+  const handleBot = (bot) => {
+    setBot(bot);
   }
 
   return (
@@ -71,13 +78,14 @@ function App() {
     <AppBg>
       <AppContainer className="app-container">
         <LeftContainer className="left-container">
-          <MainTitle className="main-title"> Hi, I'm Bicentennial Bot </MainTitle>
+          <MainTitle className="main-title"> Hi, I'm {bot.name} Bot </MainTitle>
           <SecondaryTitle className="secondary-title">How can I help you?</SecondaryTitle>
           <UserForm className="form" submitUserMsg={submitUserMsg}/>
+          <ChangeBot handleBot={handleBot}></ChangeBot>
           <Suggestions submitUserMsg={submitUserMsg}></Suggestions>
         </LeftContainer>
         <RightContainer className="right-container">
-          <Interaction userMsg={userMsg}/>
+          <Interaction bot={bot} userMsg={userMsg}/>
         </RightContainer>
       </AppContainer>
     </AppBg>

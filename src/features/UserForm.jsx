@@ -8,6 +8,7 @@ const Form = styled.form`
   max-width: 400px;
   display: flex;
   flex-direction: column;
+  margin-bottom: 5rem;
 `;
 
 export const UserForm = (props) => {
@@ -20,7 +21,6 @@ export const UserForm = (props) => {
   };
 
   const handleUserKeyPress = (e) => {
-    console.log("is this even firing");
     if (e.keyCode == 13 && e.shiftKey == false) {
       e.preventDefault();
       submitUserMsg(userInput);
