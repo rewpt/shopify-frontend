@@ -74,7 +74,7 @@ function App() {
           <MainTitle className="main-title"> Hi, I'm Bicentennial Bot </MainTitle>
           <SecondaryTitle className="secondary-title">How can I help you?</SecondaryTitle>
           <UserForm className="form" submitUserMsg={submitUserMsg}/>
-          <Suggestions></Suggestions>
+          <Suggestions submitUserMsg={submitUserMsg}></Suggestions>
         </LeftContainer>
         <RightContainer className="right-container">
           <Interaction userMsg={userMsg}/>
