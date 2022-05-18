@@ -6,6 +6,7 @@ import {createGlobalStyle} from 'styled-components';
 import styled from "styled-components";
 import leaves from "./images/leavesCut.png"
 import { MainTitle, SecondaryTitle } from './components/Main/Titles';
+import { Suggestions } from './features/Suggestions';
 
 const AppContainer = styled.div`
 display: grid;
@@ -73,6 +74,7 @@ function App() {
           <MainTitle className="main-title"> Hi, I'm Bicentennial Bot </MainTitle>
           <SecondaryTitle className="secondary-title">How can I help you?</SecondaryTitle>
           <UserForm className="form" submitUserMsg={submitUserMsg}/>
+          <Suggestions></Suggestions>
         </LeftContainer>
         <RightContainer className="right-container">
           <Interaction userMsg={userMsg}/>

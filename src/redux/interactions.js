@@ -8,7 +8,7 @@ export const interactionsSlice = createSlice({
       state.push(action.payload);
     },
     removeInteraction: (state, action) => {
-      state.filter((card, index) => {
+      return state.filter((card, index) => {
         if(index !== action.payload ) {
           return card;
         }
@@ -17,5 +17,5 @@ export const interactionsSlice = createSlice({
   }
 });
 
-export const {addInteraction} = interactionsSlice.actions;
+export const {addInteraction, removeInteraction} = interactionsSlice.actions;
 export default interactionsSlice.reducer;

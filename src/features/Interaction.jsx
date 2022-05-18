@@ -6,6 +6,8 @@ import { Card, CardBrowser } from "../components/Card/Card";
 import { Prompt, Response } from "../components/Card/Text";
 import xImg from "../images/X.png";
 import { XIcon } from "../components/Card/XIcon";
+import { useDispatch } from "react-redux";
+import { removeInteraction } from "../redux/interactions";
 
 export const Interaction = (props) => {
   const { userMsg } = props;
@@ -19,6 +21,7 @@ export const Interaction = (props) => {
     presence_penalty: 0.0,
   };
   const response = useEngineRequest(data, url, userMsg);
+  const dispatch = useDispatch();
 
   const interactions = useSelector((state) => {
     return state.interactions;
@@ -29,7 +32,12 @@ export const Interaction = (props) => {
       {interactions.map((i, index) => {
         return (
           <Card key={index} className="card">
-            <XIcon src={xImg}></XIcon>
+            <XIcon
+              onClick={() => {
+                dispatch(removeInteraction(index));
+              }}
+              src={xImg}
+            ></XIcon>
             <CardBrowser>
               <Prompt>{i.prompt}</Prompt>
               <Response>{i.response}</Response>

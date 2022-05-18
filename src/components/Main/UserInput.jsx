@@ -14,4 +14,7 @@ export const UserInput = styled.textarea`
   box-sizing: border-box;
   z-index: 1;
   text-align: start;
+  :focus::placeholder {
+    color: transparent;
+  }
 `;
