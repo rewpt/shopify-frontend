@@ -19,6 +19,12 @@ overflow: hidden;
 width: 80vw;
 height: 90vh;
 background: white;
+@media (max-width: 900px) {
+  display: flex;
+  flex-direction: column;  
+  align-items: center;
+  padding: 0;  
+}
 `
 
 const GlobalStyle = createGlobalStyle`
@@ -42,6 +48,10 @@ const LeftContainer = styled.div`
   flex-direction: column;
   grid-column: 1 / 5;
   justify-self: center;
+  @media (max-width: 900px) {  
+  align-items: center;
+  padding: 0;  
+}
 `
 const RightContainer = styled.div`
   display: flex;
@@ -59,6 +69,10 @@ const RightContainer = styled.div`
     width: 0;  /* Remove scrollbar space */
     background: transparent;  /* Optional: just make scrollbar invisible */
 }
+@media (max-width: 900px) {  
+  background-size: contain;
+}
+
 `
 
 function App() {

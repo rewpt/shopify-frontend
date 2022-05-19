@@ -5,10 +5,14 @@ import { Button } from "../components/Main/Button";
 
 const Form = styled.form`
   width: 100%;
+  font-size: 1.2rem;
   max-width: 400px;
   display: flex;
   flex-direction: column;
   margin-bottom: 5rem;
+  @media (max-width: 900px) {
+    margin-bottom: 1rem;
+  }
 `;
 
 export const UserForm = (props) => {

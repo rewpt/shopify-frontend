@@ -11,6 +11,7 @@ import { removeInteraction } from "../redux/interactions";
 
 export const Interaction = (props) => {
   const { userMsg, bot } = props;
+  console.log("bot.code", bot.code);
   const url = `https://api.openai.com/v1/engines/${bot.code}/completions`;
   const data = {
     prompt: `${userMsg}`,
@@ -39,9 +40,8 @@ export const Interaction = (props) => {
               src={xImg}
             ></XIcon>
             <CardBrowser>
-              {i.bot}
               <Prompt>{i.prompt}</Prompt>
-              <Response>{i.response}</Response>
+              <Response>{i.response}</Response>- {i.bot} Bot
             </CardBrowser>
           </Card>
         );

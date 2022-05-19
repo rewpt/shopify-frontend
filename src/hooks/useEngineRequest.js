@@ -2,13 +2,11 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import {useDispatch} from "react-redux";
 import { addInteraction } from '../redux/interactions';
-// import { Configuration, OpenAIApi } from "openai";
 
 export default function useEngineRequest(data, url, dependency, bot) {
   const [response, setResponse] = useState([]);
   const dispatch = useDispatch();
   useEffect(() => {
-
     const sendAxReq = (data) => {
       axios
         .post(url, data, {
@@ -21,6 +19,9 @@ export default function useEngineRequest(data, url, dependency, bot) {
           const responseStr = res.data.choices
           setResponse(responseStr);
           dispatch(addInteraction({prompt: data.prompt, response: responseStr[0].text, bot: bot.name}))
+        })
+        .catch((err) => {
+          console.log(err)
         });
         
     };
