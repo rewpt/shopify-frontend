@@ -2,9 +2,9 @@ import styled from "styled-components";
 import { Title } from "../components/Suggestions/Title";
 import { Button } from "../components/Suggestions/Button";
 const SuggestionContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   @media (max-width: 900px) {
-    display: flex;
-    flex-direction: column;
     align-items: center;
   }
 `;

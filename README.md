@@ -6,7 +6,7 @@
 <h2>Explore</h2>
 
 - This app is deployed for yor convenience.
-- To use the app with no setup please navigate here in your browser.
+- To use the app with no setup please navigate [here](https://shopify-frontend-nine.vercel.app/) in your browser.
 
 <h2>Features</h2>
 
