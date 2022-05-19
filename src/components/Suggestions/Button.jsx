@@ -9,7 +9,6 @@ export const Button = styled.button`
   text-align: start;
   margin-bottom: 1rem;
   padding: 0.5rem;
-  cursor: pointer;
   @media (max-width: 900px) {
     width: 100%;
     text-align: center;

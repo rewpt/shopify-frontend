@@ -24,6 +24,13 @@ background: white;
   flex-direction: column;  
   align-items: center;
   padding: 0;  
+  overflow-y: scroll;
+  width: 90vw;
+  height: 95vh;
+  ::-webkit-scrollbar {
+    width: 0;
+    background: transparent; 
+  }
 }
 `
 
@@ -64,13 +71,15 @@ const RightContainer = styled.div`
   background-position: right bottom;
   flex-direction: column;
   grid-column: 6 / span 7;
-  overflow-y: scroll;
+  @media (min-width: 901px) {
+    overflow-y: scroll;
+  }
   ::-webkit-scrollbar {
-    width: 0;  /* Remove scrollbar space */
-    background: transparent;  /* Optional: just make scrollbar invisible */
-}
+    width: 0;
+    background: transparent;
+  }
 @media (max-width: 900px) {  
-  background-size: contain;
+  background-image: none;
 }
 
 `
