@@ -50,7 +50,7 @@ const AppBg = styled.div`
   align-items: center
 `
 
-const LeftContainer = styled.div`
+const LeftContainer = styled.section`
   display: flex;
   flex-direction: column;
   grid-column: 1 / 5;
@@ -60,7 +60,7 @@ const LeftContainer = styled.div`
   padding: 0;  
 }
 `
-const RightContainer = styled.div`
+const RightContainer = styled.section`
   display: flex;
   align-items: center;
   background-image: url(${leaves});

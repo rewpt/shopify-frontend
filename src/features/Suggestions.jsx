@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import { Title } from "../components/Suggestions/Title";
 import { Button } from "../components/Suggestions/Button";
+import { List } from "../components/Suggestions/UnorderedList";
+import { Item } from "../components/Suggestions/ListItem";
+
 const SuggestionContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -17,20 +20,24 @@ export const Suggestions = (props) => {
     "Where is the best place to get pizza in Toronto?",
   ];
   return (
-    <SuggestionContainer>
+    <SuggestionContainer className="suggestionContainer">
       <Title>Quick Queries</Title>
-      {suggestionList.map((suggestion, index) => {
-        return (
-          <Button
-            key={index}
-            onClick={() => {
-              submitUserMsg(suggestion);
-            }}
-          >
-            {suggestion}
-          </Button>
-        );
-      })}
+      <List className="suggestionList">
+        {suggestionList.map((suggestion, index) => {
+          return (
+            <Item className="suggestionItem">
+              <Button
+                key={index}
+                onClick={() => {
+                  submitUserMsg(suggestion);
+                }}
+              >
+                {suggestion}
+              </Button>
+            </Item>
+          );
+        })}
+      </List>
     </SuggestionContainer>
   );
 };
